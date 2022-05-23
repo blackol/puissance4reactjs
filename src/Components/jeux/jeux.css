@@ -1,0 +1,68 @@
+.containerJeux {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(8, 8, 94, 0.9164040616246498) 46%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+.containerJeux-container {
+  width: 1325px;
+  height: 675px;
+  display: flex;
+  flex-direction: column;
+}
+.contentJeux {
+  flex: 1;
+}
+.titlejeux {
+  font-size: 2em;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+}
+.zonedejeux {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+.colonne {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.case {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: #000 solid 1px;
+  background: #fff;
+}
+.boutonjeux {
+  display: flex;
+  flex-direction: row;
+  border: #000 solid 3px;
+  height: 65px;
+}
+.btn-choix {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}

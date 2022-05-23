@@ -1,17 +1,33 @@
-import './App.css';
-import Inscription from './Components/Inscription/Inscription';
-import jeux from './Components/jeux/jeux';
-import { Route, Switch, Routeur } from 'react-router-dom';
-
+import "./App.css";
+import Inscription from "./Components/Inscription/Inscription";
+import Jeux from "./Components/jeux/Jeux";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [connected, setConnected] = useState(false);
+  console.log({ connected });
+  const [identifiant, setIdentifiant] = useState(""); // identifiant de l'utilisateur
+
+  useEffect(() => {
+    if (connected) {
+      console.log("connected");
+    } else {
+      console.log("not connected");
+    }
+  }, [connected]);
+
   return (
-    <Routeur>
-      <switch>
-        <Route exact path="/" component={Inscription} />
-        <Route path="/jeux" component={jeux} />
-      </switch>
-    </Routeur>
+    <div className="App">
+      {connected ? (
+        <Jeux identifiant={identifiant} />
+      ) : (
+        <Inscription
+          setConnected={setConnected}
+          setIdentifiant={setIdentifiant}
+          identifiant={identifiant}
+        />
+      )}
+    </div>
   );
 }
 
