@@ -70,27 +70,44 @@
   justify-content: center;
   height: 100%;
 }
-.statut{
+.statut {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 570px) {
   .zonedejeux {
     margin-top: 30px;
     width: 100%;
     height: 420px;
   }
+  .statut {
+    margin-top: -40%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
-@media screen and (max-width: 900px && min-width: 500px) {
+@media screen and (max-width: 900px && min-width: 570px) {
   .zonedejeux {
     margin-top: 30px;
     width: 100%;
     height: 590px;
+  }
+  .statut {
+    margin-top: -10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
