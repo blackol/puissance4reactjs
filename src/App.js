@@ -2,6 +2,7 @@ import "./App.css";
 import Inscription from "./Components/Inscription/Inscription";
 import Jeux from "./Components/jeux/Jeux";
 import { useState, useEffect } from "react";
+import Loading from "./Components/loading/Loading";
 
 function App() {
   const [connected, setConnected] = useState(false);

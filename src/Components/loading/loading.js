@@ -1,34 +1,16 @@
 import React from "react";
+import "../loading/loading.css";
 
- 
-
-export default function loading(props) {
-
-
-
-    const { setConnected, setIdentifiant, identifiant } = props;
-
-    async function connexion() {
-      const res = await fetch(
-        `https://trankillprojets.fr/P4/?participer&identifiant=${identifiant}`
-      );
-      const data = await res.json();
-
-      if (data.etat === "En cours") {
-        setConnected("1");
-        console.log(data.etat);
-      } else {
-        setErreur(true);
-        setMessage("Identifiant incorrect");
-        console.log(data.etat);
-      }
-    }
+export default function Loading() {
   return (
-    <div className="loadingcontainer">
-      <div className="center">
-        <div classname="ring">
-          <span>Chargement</span>
+    <div className="loading">
+      <div className="loader">
+        <div className="animation">
+          <div className="ball"></div>
+          <div className="ball"></div>
+          <div className="ball"></div>
         </div>
+        <div className="text">Recherche de Joueur ...</div>
       </div>
     </div>
   );
