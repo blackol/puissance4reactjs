@@ -5,6 +5,7 @@ import { useRef, useEffect } from "react";
 export default function Jeux(props) {
   const [joueur, setJoueur] = useState("");
   const [etat, setEtat] = useState("");
+  const [tour, setTour] = useState("");
   //useRef permet de créer des reference vers des elemeent du dom (html)
   const cols = useRef([]);
 
@@ -28,6 +29,7 @@ export default function Jeux(props) {
     const data = await res.json();
     setEtat(data.etat);
     setJoueur(data.joueur);
+    setTour(data.tour);
     console.log(data);
   }
 
@@ -45,7 +47,7 @@ export default function Jeux(props) {
       <div className="containerJeux-container">
         <div className="contentJeux">
           <div className="titlejeux">
-            <h1>JEUX</h1>
+            <h1>JEUX nbr:tours {tour}</h1>
           </div>
           <div className="zonedejeux">
             <div className="colonne" ref={addCol} id="1">
@@ -114,7 +116,7 @@ export default function Jeux(props) {
         </div>
       </div>
       <div className="statut">
-        <p>{etat}</p>
+        <p>Etat jeux :  {etat}</p>
         <p>Joueur : {joueur}</p>
       </div>
     </div>
