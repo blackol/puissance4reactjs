@@ -64,7 +64,6 @@ export default function Inscription(props) {
         </div>
         <div className="contenta">
           <div className="form">
-            <div className="form-coter"></div>
             <div className="form-center">
               <input
                 type="text"
@@ -103,7 +102,6 @@ export default function Inscription(props) {
                 connexion
               </button>
             </div>
-            <div className="form-coter"></div>
           </div>
         </div>
         <div className="content"></div>

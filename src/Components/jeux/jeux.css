@@ -13,8 +13,10 @@
   );
 }
 .containerJeux-container {
-  width: 1325px;
-  height: 675px;
+  width: 100%;
+  max-width: 1325px;
+  height: 70%;
+  min-height: 670px;
   display: flex;
   flex-direction: column;
 }
