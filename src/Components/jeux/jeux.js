@@ -113,11 +113,15 @@ export default function Jeux(props) {
               <div className="case">6</div>
             </div>
           </div>
+          <div className="statut">
+            <div>
+              <p>Etat jeux : {etat}</p>
+            </div>
+            <div>
+              <p>Joueur : {joueur}</p>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="statut">
-        <p>Etat jeux : {etat}</p>
-        <p>Joueur : {joueur}</p>
       </div>
     </div>
   );

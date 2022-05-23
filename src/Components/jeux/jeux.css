@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100vh;
+  height: 120vh;
   background: linear-gradient(
     90deg,
     rgba(2, 0, 36, 1) 0%,
@@ -16,8 +16,7 @@
 .containerJeux-container {
   width: 100%;
   max-width: 1325px;
-  height: 70%;
-  min-height: 670px;
+   margin-top: -400px;
   display: flex;
   flex-direction: column;
 }
@@ -76,11 +75,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 150px;
+  color: rgb(255, 255, 255);
 }
 
 @media screen and (max-width: 570px) {
   .zonedejeux {
-    margin-top: 30px;
     width: 100%;
     height: 420px;
   }
