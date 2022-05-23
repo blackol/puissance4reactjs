@@ -47,7 +47,7 @@ export default function Jeux(props) {
       <div className="containerJeux-container">
         <div className="contentJeux">
           <div className="titlejeux">
-            <h1>JEUX nbr:tours {tour}</h1>
+            <h1>JEUX tours: {tour}</h1>
           </div>
           <div className="zonedejeux">
             <div className="colonne" ref={addCol} id="1">
