@@ -1,4 +1,5 @@
 .containerJeux {
+  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,8 +27,9 @@
 .titlejeux {
   font-size: 2em;
   font-weight: bold;
-  color: #000;
+  color: #fff;
   text-align: center;
+  margin-top: 50px;
 }
 .zonedejeux {
   flex: 1;
@@ -61,6 +63,14 @@
   height: 65px;
 }
 .btn-choix {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.statut{
   flex: 1;
   display: flex;
   flex-direction: column;

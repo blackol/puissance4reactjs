@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "../jeux/Jeux.css";
 import { useRef, useEffect } from "react";
 
 export default function Jeux(props) {
+  const [joueur, setJoueur] = useState("");
+  const [etat, setEtat] = useState("");
   //useRef permet de créer des reference vers des elemeent du dom (html)
   const cols = useRef([]);
 
@@ -24,6 +26,8 @@ export default function Jeux(props) {
       `https://trankillprojets.fr/P4/?jouer&position=${colonne}&identifiant=${identifiant}`
     );
     const data = await res.json();
+    setEtat(data.etat);
+    setJoueur(data.joueur);
     console.log(data);
   }
 
@@ -108,6 +112,10 @@ export default function Jeux(props) {
             </div>
           </div>
         </div>
+      </div>
+      <div className="statut">
+        <p>{etat}</p>
+        <p>Joueur : {joueur}</p>
       </div>
     </div>
   );
