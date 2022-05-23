@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../jeux/Jeux.css";
+import "../jeux/jeux.css";
 import { useRef, useEffect } from "react";
 
 export default function Jeux(props) {
@@ -116,7 +116,7 @@ export default function Jeux(props) {
         </div>
       </div>
       <div className="statut">
-        <p>Etat jeux :  {etat}</p>
+        <p>Etat jeux : {etat}</p>
         <p>Joueur : {joueur}</p>
       </div>
     </div>
