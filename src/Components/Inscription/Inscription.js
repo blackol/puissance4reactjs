@@ -9,7 +9,8 @@ export default function Inscription(props) {
   const [message, setMessage] = useState("");
 
   // on récupère les props
-  const { setConnected, setIdentifiant, identifiant } = props;
+  const { setConnected, setIdentifiant, identifiant, setAttente, attente } =
+    props;
 
   // on récupere le pseudo saisi par l'utilisateur
   function inputHandler(e) {
@@ -46,6 +47,13 @@ export default function Inscription(props) {
 
     if (data.etat === "En cours") {
       setConnected(true);
+      setAttente(false);
+      //passer la variable setAttente à false
+      console.log(data.etat);
+    } else if (data.etat === "En attente") {
+      setConnected(false);
+      setAttente(true);
+      //passer la variable setAttente à true
       console.log(data.etat);
     } else {
       setErreur(true);

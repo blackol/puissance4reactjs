@@ -8,6 +8,7 @@ function App() {
   const [connected, setConnected] = useState(false);
   console.log({ connected });
   const [identifiant, setIdentifiant] = useState(""); // identifiant de l'utilisateur
+  const [attente, setAttente] = useState(false); // variable qui permet de savoir si l'utilisateur est en attente
 
   useEffect(() => {
     if (connected) {
@@ -19,15 +20,19 @@ function App() {
 
   return (
     <div className="App">
-      {connected ? (
+      {attente ? (<Loading />):( Inscription )}
+        {connected ? (
         <Jeux identifiant={identifiant} />
       ) : (
         <Inscription
           setConnected={setConnected}
           setIdentifiant={setIdentifiant}
-          identifiant={identifiant}
+            identifiant={identifiant}
+            setAttente={setAttente}
+            attente={attente}
         />
       )}
+      
     </div>
   );
 }
