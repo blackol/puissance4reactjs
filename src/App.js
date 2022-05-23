@@ -18,6 +18,8 @@ function App() {
     }
   }, [connected]);
 
+  
+
   return (
     <div className="App">
       {attente ? (<Loading />):( Inscription )}
