@@ -56,20 +56,10 @@ export default function Jeux(props) {
 
   // on modifie les case du tableau
   function affichage(carte) {
-    let tableau = [];
-    for (let i = 0; i < carte.length; i++) {
-      tableau.push(
-        <div className="colonne" id={i} key={i}>
-          {carte[i].map((casee) => (
-            <div className="case" key={casee}>
-              {casee === 0 ? "" : casee === 1 ? "X" : "O"}
-            </div>
-          ))}
-        </div>
-      );
-    }
-    return tableau;
+    console.log(carte);
+    // a finir
   }
+
 
   
 
@@ -93,7 +83,7 @@ export default function Jeux(props) {
           </div>
           <div className="zonedejeux">
             <div className="colonne" ref={addCol} id="1">
-              <div className=" case colorwhite" id="p00"></div>
+              <div className=" case colorwhite " id="p00"></div>
               <div className=" case colorwhite" id="p01"></div>
               <div className=" case colorwhite" id="p02"></div>
               <div className=" case colorwhite" id="p03"></div>
