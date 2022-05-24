@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../jeux/jeux.css";
 import { useRef, useEffect } from "react";
+import "../../assets/vide.jpg";
 
 export default function Jeux(props) {
   const [joueur, setJoueur] = useState("");
@@ -33,13 +34,32 @@ export default function Jeux(props) {
     console.log(data);
   }
 
+  // on envoie la demande de statut au serveur
+
+  async function connexion() {
+    const res = await fetch(
+      `https://trankillprojets.fr/P4/?statut&identifiant=${identifiant}`
+    );
+    const data = await res.json();
+    console.log(data);
+  }
+
   useEffect(() => {
     console.log(cols.current);
-
     cols.current.forEach((col) => {
       col.addEventListener("click", handleClick);
       // on ajoute un event listener sur chaque colonne
     });
+  }, []);
+
+  // on recupère les statue du jeux
+  // on initialise l'intervalle
+  useEffect(() => {
+    const interval = setInterval(() => {
+      connexion();
+      console.log("apeller chaque 5 seconde");
+    }, 5000);
+    return () => clearInterval(interval);
   }, []);
 
   return (

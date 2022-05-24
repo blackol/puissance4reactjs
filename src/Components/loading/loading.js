@@ -6,17 +6,22 @@ export default function Loading(props) {
   const [erreur, setErreur] = useState(false);
   const [message, setMessage] = useState("");
   // on récupère les props
-  const { setConnected, setAttente, identifiant } = props;
+          setJeux={setJeux}
+          setJeux={setJeux}
+  const { setConnected, setAttente, identifiant,setJeux } = props;
 
   async function connexion() {
     const res = await fetch(
       `https://trankillprojets.fr/P4/?participer&identifiant=${identifiant}`
     );
     const data = await res.json();
+    console.log(data);
+    console.log(identifiant);
 
     if (data.etat === "En cours") {
       setConnected(true);
       setAttente(false);
+      setJeux(true);
       //passer la variable setAttente à false
       console.log(data.etat);
     } else if (data.etat === "En attente") {
@@ -25,6 +30,7 @@ export default function Loading(props) {
       //passer la variable setAttente à true
       console.log(data.etat);
     } else {
+
       setErreur(true);
       setMessage("Identifiant incorrect");
       console.log(data.etat);
@@ -35,8 +41,8 @@ export default function Loading(props) {
   useEffect(() => {
     const interval = setInterval(() => {
       connexion();
-      console.log("This will be called every 1 seconds");
-    }, 1000);
+      //console.log("apeller chaque seconde");
+    }, 10000);
     return () => clearInterval(interval);
   }, []);
 

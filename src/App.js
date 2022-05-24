@@ -6,6 +6,7 @@ import Loading from "./Components/loading/Loading";
 
 function App() {
   const [connected, setConnected] = useState(false);
+  const [jeux, setJeux] = useState(false);
   console.log({ connected });
   const [identifiant, setIdentifiant] = useState(""); // identifiant de l'utilisateur
   const [attente, setAttente] = useState(false); // variable qui permet de savoir si l'utilisateur est en attente
@@ -18,23 +19,29 @@ function App() {
     }
   }, [connected]);
 
-  
-
   return (
     <div className="App">
-      {attente ? (<Loading />):( Inscription )}
-        {connected ? (
-        <Jeux identifiant={identifiant} />
-      ) : (
+      {attente ? (
+        <Loading
+          identifiant={identifiant}
+          setConnected={setConnected}
+          setAttente={setAttente}
+          setJeux={setJeux}
+        />
+      ) : null}
+
+      {connected ? null : (
         <Inscription
           setConnected={setConnected}
           setIdentifiant={setIdentifiant}
-            identifiant={identifiant}
-            setAttente={setAttente}
-            attente={attente}
+          identifiant={identifiant}
+          setAttente={setAttente}
+          attente={attente}
+          setJeux={setJeux}
         />
       )}
-      
+
+      {jeux ? <Jeux identifiant={identifiant} /> : null}
     </div>
   );
 }

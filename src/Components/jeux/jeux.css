@@ -16,7 +16,7 @@
 .containerJeux-container {
   width: 100%;
   max-width: 1325px;
-   margin-top: -400px;
+  margin-top: -400px;
   display: flex;
   flex-direction: column;
 }
@@ -53,7 +53,6 @@
   align-items: center;
   justify-content: center;
   border: #000 solid 1px;
-  background: #fff;
 }
 .boutonjeux {
   display: flex;
