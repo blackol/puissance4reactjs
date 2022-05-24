@@ -6,8 +6,7 @@ export default function Loading(props) {
   const [erreur, setErreur] = useState(false);
   const [message, setMessage] = useState("");
   // on récupère les props
-          setJeux={setJeux}
-          setJeux={setJeux}
+          
   const { setConnected, setAttente, identifiant,setJeux } = props;
 
   async function connexion() {
